@@ -69,8 +69,8 @@ public class ActivityOne extends Activity {
 
 				// Create an intent stating which Activity you would like to
 				// start
-				Intent intent = null;
-
+				Intent intent = new Intent(this, ActivityTwo.class);
+                                startActivity(intent);
 				// Launch the Activity using the intent
 
 			}
@@ -91,7 +91,8 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
+                mCreate = mCreate + 1;
+		displayCounts();
 	}
 
 	// Lifecycle callback overrides
@@ -106,6 +107,8 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
+		mStart = mStart +1
+		displayCounts();
 
 	}
 
@@ -119,7 +122,8 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
+		mResume = mResume + 1;
+		displayCounts();
 	}
 
 	@Override
@@ -148,6 +152,9 @@ public class ActivityOne extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
+		mRestart =mRestart + 1;
+		displayCount();
+		
 
 	}
 
@@ -173,12 +180,11 @@ public class ActivityOne extends Activity {
 	// specified above
 	public void displayCounts() {
 
-		// TODO - uncomment these lines
-	/*
+		
 		mTvCreate.setText("onCreate() calls: " + mCreate);
 		mTvStart.setText("onStart() calls: " + mStart);
 		mTvResume.setText("onResume() calls: " + mResume);
 		mTvRestart.setText("onRestart() calls: " + mRestart);
-	*/
+		
 	}
 }
